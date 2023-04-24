@@ -36,3 +36,15 @@ console.log(typeof parseInt(foo));
 const bar = '27.89';
 
 console.log(parseFloat(bar)); 
+// -------------------------------------------------------------------------
+// everything in js is based on trye or false
+// false values - false 0 "" null undefined Na
+// everything else is true
+
+let userLogIn = "";
+
+if(userLogIn){
+    console.log("welcome");
+} else{
+    console.error("login please")
+}
