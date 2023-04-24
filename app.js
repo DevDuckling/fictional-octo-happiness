@@ -48,3 +48,19 @@ if(userLogIn){
 } else{
     console.error("login please")
 }
+
+// operator ! && ||
+// ( ... ) have higher precedence
+// !(condn is true) answer is false
+
+let loyalCustomerAge = 22;
+
+if(loyalCustomerAge && loyalCustomerAge <= 20){
+    console.log("We got an offer click on know more");
+}else{console.error("Adults not allowed");}
+
+let promotionDownGrade ="Yes";
+
+if(promotionDownGrade ||  loyalCustomerAge <= 20){
+    console.log("U will be missed");
+} else{console.log("happy to see you!");}
