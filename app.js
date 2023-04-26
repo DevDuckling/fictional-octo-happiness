@@ -64,3 +64,5 @@ let promotionDownGrade ="Yes";
 if(promotionDownGrade ||  loyalCustomerAge <= 20){
     console.log("U will be missed");
 } else{console.log("happy to see you!");}
+
+// start ternary operators
