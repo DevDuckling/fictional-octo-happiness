@@ -66,3 +66,8 @@ if(promotionDownGrade ||  loyalCustomerAge <= 20){
 } else{console.log("happy to see you!");}
 
 // start ternary operators
+
+// Condition ? ExpIsTrue : ExpIsFalse;
+// only works with yes or no
+// taking code of line 44
+ userLogIn ? console.log("welcome") : console.error("Login please");
