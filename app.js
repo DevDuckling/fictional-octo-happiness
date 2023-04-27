@@ -71,3 +71,18 @@ if(promotionDownGrade ||  loyalCustomerAge <= 20){
 // only works with yes or no
 // taking code of line 44
  userLogIn ? console.log("welcome") : console.error("Login please");
+
+//  ------------[Array] methods --------------
+const mixedArray = [null, undefined, 27.11, "August", NaN]
+// In console try mixedArray[1], according to length which is 5 but mixedArray[5] is undefined highest number order -1  
+
+// push - add last element to the array
+// pop - removes last element to the array
+// shift- removes first element from the array
+// unshift - add element at index[0] to the array
+
+// mixedArray.push('item any');
+// include() returns boolean value
+// indexOf() returns indices value if not present returns -1
+// slice(?start, ?end) begins from start stops at excluding end
+// splice(?startingIndex, ?numberOfItemsToRemove, "add element")
