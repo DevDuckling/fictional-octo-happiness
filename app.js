@@ -86,3 +86,15 @@ const mixedArray = [null, undefined, 27.11, "August", NaN]
 // indexOf() returns indices value if not present returns -1
 // slice(?start, ?end) begins from start stops at excluding end
 // splice(?startingIndex, ?numberOfItemsToRemove, "add element")
+
+//-----------OBJECTS{KEY:VALUE}---------------
+
+const ninjas = {
+    naruto: 'air',
+    sasuke: 'electric',
+    sakura:'healing',
+    '32 gates': 'lorem ipsum',}
+
+// object are key value pairs with unsystematic order
+// they could be nested and you can access them as ninjas['sakura'] or ninjas.skaura 
+// if you want to update objects you can object['key'] = 'value' or object.key = 'value'
