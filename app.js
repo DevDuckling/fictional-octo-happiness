@@ -98,3 +98,20 @@ const ninjas = {
 // object are key value pairs with unsystematic order
 // they could be nested and you can access them as ninjas['sakura'] or ninjas.skaura 
 // if you want to update objects you can object['key'] = 'value' or object.key = 'value'
+
+// --------------for loop-----------------
+// Accessing nest array items throught for loop
+
+let randomData = [
+    ['F', 'O', 'O'],
+    ['B', 'A', 'R'],
+    ['F', 'O', 'O']
+] 
+
+for(let i = 0; i < randomData.length; i++){
+    console.log(randomData[i]);
+    let rowString = randomData[i];
+    for(j = 0; j < rowString.length; j++){
+        console.log(rowString[j]);
+    }
+}
