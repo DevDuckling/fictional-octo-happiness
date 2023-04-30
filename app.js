@@ -115,3 +115,34 @@ for(let i = 0; i < randomData.length; i++){
         console.log(rowString[j]);
     }
 }
+// ---------------for in works OBJECTS---------------
+for(power in ninjas){
+    console.log(power +' elemental type is '+ ninjas[power]);
+}
+
+// it prints their indices
+for(charct in randomData){
+    console.log(charct)
+}
+// ---------------for of work with ITERaBLES e.g. array---------
+for(row of randomData){
+    console.log(row);
+    for(letter in row){
+        console.log(row[letter])
+    }
+}
+
+// ninjas is not iterable 
+// for(pow of ninjas){
+//     console.log(pow);
+// }
+
+// you can use OBject.keys and Object.values to iterate
+for(p of Object.keys(ninjas)){
+   console.log(p)
+}
+
+for(p of Object.values(ninjas)){
+    console.log(p)
+ }
+
