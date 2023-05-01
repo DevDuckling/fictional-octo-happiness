@@ -146,3 +146,29 @@ for(p of Object.values(ninjas)){
     console.log(p)
  }
 
+// --------------scope
+// child functions can access parent function variable if not found on nearest scope
+//   every loop is block and func is func scope I am talking about {}
+
+function exampleFunc(){
+    let a = 'first var';
+    function printStrLetters(){
+        // let a = 'second var';
+        for(let i = 0; i  < a.length; i++){
+            console.warn(a);
+            console.log(a[i]);
+        }
+    }
+    printStrLetters();
+}
+
+// adding function to ibject and accessing it is method
+
+// -----Factory Function
+function multiplyBy(num){
+    return function(x){
+        return x * num;
+    }
+}
+// const triple = mutliplyBy(3);
+// triple(3) --> 9
