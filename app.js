@@ -172,3 +172,19 @@ function multiplyBy(num){
 }
 // const triple = mutliplyBy(3);
 // triple(3) --> 9
+
+// -------------MAP use return in func give new array-----------
+const arrayA = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const arrayB = [1, 2, 5, 4, 3,5, 6,5]
+
+// console.log(arrayA.map(function(num) {return num * 2}))
+
+// Arrow functions
+console.log(arrayA.map((num)=>{return num*2}))
+const evenNums = arrayA.filter(n => n%2===0);
+const oddNums = arrayA.filter(n=>n%2===1);
+const bigNums = arrayA.filter(n => n >5)
+
+const findFive = arrayB.find(n => n===5)
+const filterFive = arrayB.filter(n => n ===5)
+const everyFive = arrayB.every(n => n ===5)
