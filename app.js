@@ -236,3 +236,12 @@ const clients = [
   
 // took response from ChatGPT for practicing purpose.
 const sortUnderThirty = clients.sort((a,b) => a.age - b.age)
+
+// REDUCE
+
+const arrayReduce = [2,4,6,8];
+const reduceEvenNum = arrayReduce.reduce((total, currentValue) => total * currentValue)
+// total                 currentValue
+//  2                        4
+//  8                        6
+// ... it remebers total n operates it right one
