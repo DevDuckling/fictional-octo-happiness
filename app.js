@@ -172,3 +172,76 @@ function multiplyBy(num){
 }
 // const triple = mutliplyBy(3);
 // triple(3) --> 9
+
+// -------------MAP/Sort/FInd/Filter use return in func give new array-----------
+const arrayA = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const arrayB = [1, 2, 5, 4, 3,5, 6,5];
+const arrayPrices = [22, 63, 14,20, 110.71]
+
+// console.log(arrayA.map(function(num) {return num * 2}))
+
+// Arrow functions
+console.log(arrayA.map((num)=>{return num*2}))
+const evenNums = arrayA.filter(n => n%2===0);
+const oddNums = arrayA.filter(n=>n%2===1);
+const bigNums = arrayA.filter(n => n >5)
+
+const findFive = arrayB.find(n => n===5)
+const filterFive = arrayB.filter(n => n ===5)
+const everyFive = arrayB.every(n => n ===5)
+
+const sortAscend = arrayPrices.slice().sort((a,b)=> a-b)
+// it will in acsending order
+const sortDscend = arrayPrices.slice().sort((a,b)=> b-a)
+// desending order 
+// it will mutate array so use slice() it give u copy of arr
+
+const clients = [
+    {
+      name: "John",
+      age: 28,
+      city: "New York",
+      profession: "Engineer",
+      salary: 80000
+    },
+    {
+      name: "Mary",
+      age: 35,
+      city: "Los Angeles",
+      profession: "Writer",
+      salary: 65000
+    },
+    {
+      name: "David",
+      age: 42,
+      city: "Chicago",
+      profession: "Doctor",
+      salary: 120000
+    },
+    {
+      name: "Emily",
+      age: 23,
+      city: "San Francisco",
+      profession: "Designer",
+      salary: 55000
+    },
+    {
+      name: "Tom",
+      age: 31,
+      city: "Miami",
+      profession: "Developer",
+      salary: 90000
+    }
+  ];
+  
+// took response from ChatGPT for practicing purpose.
+const sortUnderThirty = clients.sort((a,b) => a.age - b.age)
+
+// REDUCE
+
+const arrayReduce = [2,4,6,8];
+const reduceEvenNum = arrayReduce.reduce((total, currentValue) => total * currentValue)
+// total                 currentValue
+//  2                        4
+//  8                        6
+// ... it remebers total n operates it right one
