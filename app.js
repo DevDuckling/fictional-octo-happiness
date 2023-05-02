@@ -175,7 +175,8 @@ function multiplyBy(num){
 
 // -------------MAP use return in func give new array-----------
 const arrayA = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-const arrayB = [1, 2, 5, 4, 3,5, 6,5]
+const arrayB = [1, 2, 5, 4, 3,5, 6,5];
+const arrayPrices = [22, 63, 14,20, 110.71]
 
 // console.log(arrayA.map(function(num) {return num * 2}))
 
@@ -188,3 +189,9 @@ const bigNums = arrayA.filter(n => n >5)
 const findFive = arrayB.find(n => n===5)
 const filterFive = arrayB.filter(n => n ===5)
 const everyFive = arrayB.every(n => n ===5)
+
+const sortAscend = arrayPrices.slice().sort((a,b)=> a-b)
+// it will in acsending order
+const sortDscend = arrayPrices.slice().sort((a,b)=> b-a)
+// desending order 
+// it will mutate array so use slice() it give u copy of arr
