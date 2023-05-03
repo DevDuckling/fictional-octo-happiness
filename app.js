@@ -274,3 +274,26 @@ const clients = [
 // function spreadMe(a,b,c,d){console.log(a + 'a');console.log(b + 'b');console.log(c + 'c');console.log(d + 'd')}
 
 // spreadMe(...strSpread);
+
+// // spread in Array -------------------------------
+
+// const colors = ['red', 'green', 'blue'];
+// const fruits = ['apple', 'banana', 'orange', 'grape'];
+// const languages = ['JavaScript', 'Python', 'Java'];
+// const animals = ['cat', 'dog', 'lion', 'tiger'];
+
+// const mixedArray = [...colors, ...fruits, ...languages, ...animals];
+
+// // ARGUMENTS is npt an array we have to make it by spread
+// function sum(){
+//   const a = [...arguments];
+//   return a.reduce((t, curr) => {return t+curr}) 
+// }
+
+// // ...rest
+// function multiply(...num){
+//  return num.reduce((accumlator, currValue) => accumlator * currValue);
+// }
+
+// // DEstructing
+// const [one, two, three] = colors;
