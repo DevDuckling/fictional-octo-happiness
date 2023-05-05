@@ -1,0 +1,8 @@
+/* would be enabled using classList.toggle(forListItems) */
+.forListItems{
+    background-color: black;
+    color: blueviolet;
+    font-size: 2rem;
+}
+
+
