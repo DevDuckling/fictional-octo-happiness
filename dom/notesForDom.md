@@ -45,3 +45,25 @@
             - It returns the tag that is removed and can be stored in variable.
         
 	---
+
+## Events
+
+1. First you need to select an element, i.e, btn then add an method to which a event and callback function is added. 
+    - basic synntax `selectedElement.addEventListener('eventName', (callback function) =>{});`
+    - `click`, `mouseOver`, `scroll` 
+    - `window.screen` display bunch of properties and `innerHeight` `innerWidth` can be used to move an element with the help of `Math.random`.
+
+2. To know more about event evt or e is passed as arg in callback `function(e)` and `console.log(e)` to get information about particular event.
+
+3. Best way for apply event listeners on multiple elements is `looping` i.e., list of `div` 
+
+4. `key` events
+    - `keyup` and `keydown` occurs when you press any key i.e., `Shift Key`, useful for making games etc
+    - `keypress`  it shows the changes in input and can use `key` or `keycode` property to listen things.
+        - In most browsers `arrow keys` are not considered `keypress`.
+
+5. There is method on event object called `preventDefault()` for `form element` to prevent button of form, from redirecting us to new page.
+
+6. `input` event gives us sync data if we managed to extract it of the input element without pressing submit button. i.e., `e.target.value`
+    - would give value as you type
+    `change` would give value as you lose focus or press enter key.
