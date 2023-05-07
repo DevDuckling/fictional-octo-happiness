@@ -67,3 +67,64 @@
 6. `input` event gives us sync data if we managed to extract it of the input element without pressing submit button. i.e., `e.target.value`
     - would give value as you type
     `change` would give value as you lose focus or press enter key.
+
+	---
+
+## Callbacks Promises and Async JS
+
+1. `Call Stack` 
+    - Example Sink and Stack of plates, first plate that goes in the sink would be last to pick out, similarly the last plate would be first to pick out. 
+    - Google dev tools, then sources there is call stack on top right corner. In your script press on any single line to code to add a breakpoint then pause the script, refresh page and press step into next function button and keep an eye on call stack.
+
+2. `Single Threaded Language`
+    - JavaScript is single threaded language. It runs one line of code at a time. Similar to humans they are single threaded when sneezing.
+
+3. `Web API's`
+    - Set of api's and setTimeout are provided by browser not by JavaScript as it it single threaded. Browser reminds JS to add certain api reqs when fetched to add it to the call stack in provided time.
+    - Basic Functionality
+    - `Call Stack --------------> Web Api's --------> Call Stack Queue` from call stack queue js pick them back to callstack.
+
+4. `getBoundingClientRect()` 
+    -  method returns a `DOMRect object` providing information about the size of an element and its position `relative` to the `viewport`.
+
+5. `PROMISES`
+    - The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+    - basic syntax
+
+        ```
+            const savingItInVariable = new Promise(resolve, response){
+                 if(condn === true){
+                    resolve();
+                    }else{
+                        failure();
+                        }
+                    }
+            <!-- if success -->
+            savingItInVariable.then(){
+                callback function....
+            }.catch(){
+                callback function.....
+             }
+        ```
+    
+    - if neither of them is passed then we get status of `pending`
+    - every `resolve()` have `.then()` which triggers on `success`
+    - every `failure()` have `.catch()` which trigerrs on `rejected`
+    - nesting on `.then()` can be done on the same level when all of them are returning the same promise.
+
+    ```
+    example:
+    .then((res)=>{
+        res.data;
+        const id = res.data[0].pageNUmber;
+        return MimicReq(`/url/${id}`)})
+    .then((res)=>{
+        res.data;
+        const commentRating = res.data.ratings
+         return MimicReq(`/url/${commentRating}`)
+    })
+    .catch((error)=>{
+        console.log('error',error)
+    })
+    ```
+    - best part of this is we only need one `catch()` of multiple `.then()`.
