@@ -128,3 +128,121 @@
     })
     ```
     - best part of this is we only need one `catch()` of multiple `.then()`.
+
+    ---
+
+### AJAJ
+
+1. Terms
+    
+    - AJAX - Asynchronous JavaScripst And XML : Idead of AJAX is communicationg with servers behind the scenes (SPA) and NOT behind pages load (refreshing page for evry query).
+    - XML - Extensible Markup Language : in simple terms, for grouping content and adding meaning to your data. 
+    
+    - AJAJ - Asynchronous JavaScripst And JSON
+    - JSON Java Script Object Notation : is protocol for communicating between servers or sending data between server to server || server to browser then we can it by JS.
+    - Diff between JS JSON is not JS. JSON is look a like JS. In JSON every key should be under quotes and cannot store complicated functions.
+
+2. `XMLHttpRequest`
+    basic syntax
+
+    ```
+    const someReq = new XMLHttpRequest();
+
+    <!-- If success -->
+    someReq.addEventListener('load', function(){
+        const data = JSON.parse(this.resposeText);
+        console.log(data);
+    })
+
+    <!-- If Error -->
+    someReq.addEventListener('error', function(eror){
+        console.log('Error', error);
+    })
+
+    <!-- provide type of request and where to send request to (api path )-->
+    someReq.open('GET', 'api/path');
+
+    <!-- send the request -->
+    someReq.send();
+
+    ```
+3. `Fetch API`
+    - new way of making Js reqs, n/a in IE and supports promises.
+    - basic syntax understanding
+    ```
+    <!-- pass fetch an api path -->
+    fetch('api/path')
+
+    <!-- below response is `ReadableStream` which can big chunk of data which can tale time that's why it returns a promise -->
+
+    .then((response) => {
+        <!-- body.json() would make it to completion -->
+        response.json()
+
+        <!-- now to get data we need another .then() -->
+    
+    .then((data) => {
+        console.log(data)
+    })
+    
+    })
+
+    <!-- It wont run on status code 404 or 500 It will only run when network issues are detetcted.  -->
+
+     .catch((error)=>{
+        console.log('error');
+    })
+
+    ```
+    - how it looks without comments and chaining too.
+
+    ```
+     <!-- as long as you pass return to response.json() you chain .`then()`   -->
+    fetch('api/path`).then((response)=>{
+        return response.json()
+    })
+    .then((data)=>{
+            console.log(data)
+            return response.json()
+    })
+    .catch((error)=>{
+        console.log('error');
+    })
+    ```
+4. `Axios`
+    
+    - Axios is a promise-based HTTP Client for node.js and the browser
+    - bts uses fetch()
+    - no need to json parsing it is already done under data.
+    - catch works on 404 and on 500
+
+    - basic syntax
+    ```
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+    add it above js file
+
+    in js file
+
+    axios.get('api/path').then((response)=>{
+        console.log('success', resposne)
+    }).catch((error)=>{
+        console.log('Error came',error)
+    })
+
+    ```
+
+5. `ASYNC` `AWAIT`
+    - async keyword : async function always returns a promise, if function return a value te promise is resolved with that value else it is rejected.
+    - can add `.then()` as it is returning promise
+    - basic syntax
+    ```
+    async function quote(){
+        return('Do not rush... Trust the process')
+    }
+    quote().then((foo)=>{
+        console.log('Quote of the day',foo);
+    })
+    <!-- It will return promise with return value -->
+    ```
+    - await : can be only used with async function. It will pause the execution of function, waits for promise to be resolved. 
