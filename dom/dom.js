@@ -40,3 +40,22 @@
 
 // // -----------------------------------------------------------
 // // ----------------------------------------------------------
+
+// promise---------------------
+const sum = (x,y) =>{
+    return new Promise((executor, rejected)=>{
+       if(x === y){
+        rejected('error')    
+    }else{
+        executor('success')
+    }
+    })
+
+}
+sum(4,4).then((res)=>{
+console.log('success', res);
+}).catch((err)=>{
+console.log('error', err)
+})
+
+// ---------------

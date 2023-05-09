@@ -246,3 +246,96 @@
     <!-- It will return promise with return value -->
     ```
     - await : can be only used with async function. It will pause the execution of function, waits for promise to be resolved. 
+
+    ```
+    async function check(x,y){
+        if(x === y){
+            throw 'Same NuMBERS detected'
+        }
+        return x + y
+    }
+
+    check(2,2).then((val)=>{
+        console.log('success')
+    }).catch((err)=>{
+        console.log('error')
+    })
+    ```
+
+    - writing same func as promise
+    ```
+    const check = (x,y) =>{
+        return new Promise((executor, rejected)=>{
+           if(x === y){
+            rejected('same numbers detected')    
+        }else{
+            executor('success')
+        }
+        })
+    
+    }
+
+    check(2,2).then((val)=>{
+        console.log('success')
+    }).catch((err)=>{
+        console.log('error')
+    })
+    ```
+
+    - writing with await KEYWORD
+    ```
+    async function check(){
+       const res = await axios.get('api/path');
+       console.log(res)
+    }
+    ```
+
+    - sequential chaning multiple await(one thing at a time will be called and wait for it to fullfied)
+    ```
+    async function getMePokemon(){
+        const one = await axios.get('https://pokeapi.co/api/v2/pokemon/5')
+        const two = await axios.get('https://pokeapi.co/api/v2/pokemon/6')
+        const three = await axios.get('https://pokeapi.co/api/v2/pokemon/7')
+            console.log(one.data)
+            console.log(two.data)
+            console.log(three.data)
+    }
+
+    getMePokemon()
+    ```
+
+    - parallel chainning (called at same time then will be await)
+    ```
+    async function gimmePoke(){
+        const one = axios.get('https://pokeapi.co/api/v2/pokemon/1')
+        const two = axios.get('https://pokeapi.co/api/v2/pokemon/2')
+        const three = axios.get('https://pokeapi.co/api/v2/pokemon/3')
+        const poke1 = await one;
+        const poke2 = await two;
+        const poke3 = await three;
+        console.log(poke1.data);
+        console.log(poke2.data);
+        console.log(poke3.data);
+    }
+    ```
+
+    - `Promise.all([arr1,..])`
+
+    ```
+    async function getMePokemon(){
+        const one = await axios.get('https://pokeapi.co/api/v2/pokemon/5')
+        const two = await axios.get('https://pokeapi.co/api/v2/pokemon/6')
+        const three = await axios.get('https://pokeapi.co/api/v2/pokemon/7')
+        const result = await Promise.all([one, two, three]);
+        getMePoke(result)
+    }
+
+    function getMePoke(result){
+        for(let pokemon of result){
+            console.log(pokemon.data.name)
+        }
+    }
+
+    getMePokemon()
+    ```
+    ---
